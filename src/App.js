@@ -30,10 +30,6 @@ function App() {
     },
   ];
 
-  const dots = [];
-  dots.fill("4", 0, 4);
-  console.log(dots);
-
   function handleRightClick() {
     if (count < slides.length) setCount(count + 1);
   }
