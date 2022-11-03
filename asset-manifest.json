@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/frontend/static/css/main.0af0ef8f.css",
+    "main.js": "/frontend/static/js/main.1e084e7d.js",
+    "static/js/787.cda612ba.chunk.js": "/frontend/static/js/787.cda612ba.chunk.js",
+    "static/media/Bar_micva.jpeg": "/frontend/static/media/Bar_micva.656261982345e4be5a69.jpeg",
+    "static/media/3.jpg": "/frontend/static/media/3.130e678dfb0999f30dec.jpg",
+    "static/media/4.jpg": "/frontend/static/media/4.5aafa7a4481da4b6e2c6.jpg",
+    "static/media/StamAshkenazCLMMedium.ttf": "/frontend/static/media/StamAshkenazCLMMedium.bd6d2ca39f159053b8d6.ttf",
+    "static/media/2.jpg": "/frontend/static/media/2.073f4f659f160172ac85.jpg",
+    "static/media/1.jpg": "/frontend/static/media/1.f7d29c2f5d86f1d3e969.jpg",
+    "index.html": "/frontend/index.html",
+    "main.0af0ef8f.css.map": "/frontend/static/css/main.0af0ef8f.css.map",
+    "main.1e084e7d.js.map": "/frontend/static/js/main.1e084e7d.js.map",
+    "787.cda612ba.chunk.js.map": "/frontend/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0af0ef8f.css",
+    "static/js/main.1e084e7d.js"
+  ]
+}
