@@ -1,18 +1,162 @@
-* {
+/* * {
   box-sizing: border-box;
+} */
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  max-width: 940px;
+  margin: auto;
+}
+section {
+  margin: 0 auto 0px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  border-bottom: rgb(87, 1, 1) solid 2px;
+}
+
+.header__navbar {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  float: right;
+  color: rgb(87, 1, 1);
+  margin-bottom: 30px;
+  border-bottom: rgb(87, 1, 1) solid 2px;
+  border-radius: 8%;
+}
+.header__navbar_item {
+  box-sizing: border-box;
+  margin: 20px 20px 3px;
+  list-style: none;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: larger;
+  padding: 10px;
+  font-family: Ashkenaz;
+  
+
+}
+.header__navbar_item:hover {
+  background-color: #ea5d5d;
+  /* border-radius: 43%; */
+}
+.header__navbar_link {
+  text-decoration: none;
+  color: rgb(87, 1, 1);
 }
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1200px;
   position: relative;
   margin: auto;
 }
+.header__title {
+  background: url(https://ydat.co.il/wp-content/themes/ydat/images/title-header.jpg)
+    no-repeat top center;
+  font-family: "Ashkenaz";
+  padding: 20px 80px;
+  max-width: 1246px;
+  height: 74px;
+  background-size: 100% 100% !important;
+  font-weight: bolder;
+  font-size: 36px;
+  margin: 0 0 16px;
+  text-align: center;
+}
 
+.header__img {
+  width: 1200px;
+  height: 400px;
+  border: rgb(157, 2, 2) solid 2px;
+  padding: 2px;
+}
 /* Hide the images by default */
 /* .mySlides {
-  display: none;
+  display: none;} */
+/* * p{
+  margin: 0;
 } */
+
+.item1 {
+  grid-area: parasha;
+}
+.item2 {
+  grid-area: zmanim;
+}
+.item3 {
+  grid-area: shiur;
+}
+.item4 {
+  grid-area: chol;
+}
+.item5 {
+  grid-area: siurchol;
+}
+
+.adsBored {
+  display: grid;
+  grid-template-areas:
+    "parasha parasha zmanim zmanim shiur shiur"
+    "chol chol chol siurchol siurchol siurchol";
+  gap: 10px;
+}
+
+.parashat-shavoua {
+  background-color: #e9dfcf;
+  border-radius: 10%;
+  text-align: center;
+  /* float: right; */
+  margin: 10px;
+  padding: 10px;
+}
+
+.seder-yom-chol {
+  background-color: #d2cdc6;
+  /* width: 250px;
+  height: 150px; */
+}
+
+.section-title {
+  text-align: right;
+  font-weight: bolder;
+  font-family: "Ashkenaz";
+  font-size: 42px;
+  margin: 0;
+  margin-right: 30px;
+}
+
+.shiurei-tora {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.shiurei-tora__content {
+  box-sizing: border-box;
+  background-color: #e9dfcf;
+  padding: 50px;
+  margin-right: 3px;
+}
+
+.shiueri-Tora__title {
+  font-size: 22px;
+  font-weight: bold;
+}
+.shiueri-Tora__img {
+  width: 300px;
+  height: 300px;
+}
+.shiurei-tora {
+  text-align: center;
+}
 
 /* Next & previous buttons */
 .prev,
@@ -56,11 +200,12 @@
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: rgb(0, 0, 0);
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
+  /* top: 0; */
+  font-weight: bolder;
 }
 
 /* The dots/bullets/indicators */
@@ -86,6 +231,9 @@
   animation-duration: 1.5s;
 }
 
+.slideshow-container {
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -93,4 +241,9 @@
   to {
     opacity: 1;
   }
+}
+
+@font-face {
+  font-family: Ashkenaz;
+  src: url(/Users/shalom/Desktop/SYNAGUCK/frontend/src/StamAshkenazCLMMedium.ttf);
 }

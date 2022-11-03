@@ -3,6 +3,8 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = React.useState(1);
+  const [data, setData] = React.useState({});
+  const [time, setTime] = React.useState("");
   const slides = [
     {
       id: 1,
@@ -29,10 +31,35 @@ function App() {
       text: "Caption Text",
     },
   ];
-
+  const shiureiToraData = [
+    {
+      id: 1,
+      title: "שיעור בטעמי המקרא",
+      text: "שיעור שבועי בטעמי המקרא כל יום בשלישי ב 8 בערב בשיעור זה ילמדו התלמדידים לקרוא בתורה ובפרשת שבוע בנוסך ילמדו בתלמידים שירי שבת ומקמים עם החזן מאור סובול",
+      image: require("./images/1.jpg"),
+    },
+    {
+      id: 2,
+      title: "שיעור בטעמי המקרא",
+      text: "שיעור שבועי בטעמי המקרא כל יום בשלישי ב 8 בערב בשיעור זה ילמדו התלמדידים לקרוא בתורה ובפרשת שבוע בנוסך ילמדו בתלמידים שירי שבת ומקמים עם החזן מאור סובול",
+      image: require("./images/2.jpg"),
+    },
+    {
+      id: 3,
+      title: "שיעור בטעמי המקרא",
+      text: "שיעור שבועי בטעמי המקרא כל יום בשלישי ב 8 בערב בשיעור זה ילמדו התלמדידים לקרוא בתורה ובפרשת שבוע בנוסך ילמדו בתלמידים שירי שבת ומקמים עם החזן מאור סובול",
+      image: require("./images/3.jpg"),
+    },
+    {
+      id: 4,
+      title: "שיעור בטעמי המקרא",
+      text: "שיעור שבועי בטעמי המקרא כל יום בשלישי ב 8 בערב בשיעור זה ילמדו התלמדידים לקרוא בתורה ובפרשת שבוע בנוסך ילמדו בתלמידים שירי שבת ומקמים עם החזן מאור סובול",
+      image: require("./images/Bar_micva.jpeg"),
+    },
+  ];
   const dots = [];
+
   dots.fill("4", 0, 4);
-  console.log(dots);
 
   function handleRightClick() {
     if (count < slides.length) setCount(count + 1);
@@ -46,21 +73,51 @@ function App() {
     setCount(parseInt(e.target.id));
   }
 
+  React.useEffect(() => {
+    fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
+      .then((response) => response.json())
+      .then((resp) => {
+        console.log(resp.items);
+        setData(resp);
+
+        const d = new Date(resp.items[1].date);
+        setTime({
+          hadlaka: `${d.getHours()}:${d.getMinutes()}`,
+          havdala: `${d.getHours() + 1}:${d.getMinutes()}`,
+        });
+      })
+      .catch(console.log);
+  }, []);
+
   return (
     <div className="App">
-      <header>
+      <header id="header-menu">
         <nav>
-          <ul>
-            <li>ראשי</li>
-            <li>זמני תפילה</li>
-            <li>שיעורי תורה</li>
-            <li>צור קשר</li>
-            <li>תרומה/תשלום</li>
+          <ul className="header__navbar">
+            <li className="header__navbar_item">צור קשר</li>
+            <li className="header__navbar_item">  <a className="header__navbar_link" href="#truma">
+               תרומה
+              </a></li>
+            <li className="header__navbar_item">
+              <a className="header__navbar_link" href="#shiurei-Tora">
+                שיעורי תורה
+              </a>
+            </li>
+            <li className="header__navbar_item">
+              <a className="header__navbar_link" href="#zmani-tefila">
+                זמני תפילה
+              </a>
+            </li>
+            <li className="header__navbar_item">
+              {" "}
+              <a className="header__navbar_link" href="#header-menu">
+                ראשי
+              </a>
+            </li>
           </ul>
         </nav>
-        {/* <!-- Slideshow container --> */}
+        <div className="header__title">בית כנסת בית אל הרצל יהוד</div>
         <div className="slideshow-container">
-          {/* <!-- Full-width images with number and caption text --> */}
           {slides.map(
             (slide) =>
               slide.id === count && (
@@ -70,10 +127,10 @@ function App() {
                   style={slide.style}
                 >
                   <div className="numbertext">{slide.numbertext}</div>
-                  <img src={slide.src} alt="" style={{ width: "100%" }}></img>
+                  <img className="header__img" src={slide.src} alt=""></img>
                   <div className="text">{slide.text}</div>
                 </div>
-              ),
+              )
           )}
 
           {/* <!-- Next and previous buttons --> */}
@@ -110,6 +167,80 @@ function App() {
           ></span>
         </div>
       </header>
+
+      <main>
+        <section id="zmani-tefila">
+          <h2 className="section-title">זמני תפילה</h2>
+          <div className="adsBored">
+            <div className="parashat-shavoua item3">
+              <p>שיעור עם יעקוב ישראל</p>
+            </div>
+
+            <div className="parashat-shavoua item2">
+              <p> ערבית לשבת : 6:40</p>
+              <p>שחרית לשבת : 7:50</p>
+              <p>מנחה לשבת : 7:50</p>
+              <p>ערבית למצ״ש : 7:50</p>
+            </div>
+            <div className="parashat-shavoua item1">
+              <p> {data.items ? data.items[2].hebrew : "hee"}</p>
+              <p>
+                {" "}
+                {data.items
+                  ? data.items[1].hebrew + " : " + time.hadlaka
+                  : "hee"}
+              </p>
+              <p>
+                {data.items
+                  ? data.items[3].hebrew + " : " + time.havdala
+                  : "hee"}
+              </p>
+              <p>משיב הרוח </p>
+            </div>
+
+            <div className="parashat-shavoua item4">
+              <p> ערבית לשבת : 6:40</p>
+              <p>שחרית לשבת : 7:50</p>
+              <p>מנחה לשבת : 7:50</p>
+              <p>ערבית למצ״ש : 7:50</p>
+            </div>
+
+            <div className="parashat-shavoua item5">
+              <p> ערבית : 6:40</p>
+              <p>שחרית : 7:50</p>
+              <p>מנחה : 7:50</p>
+              <p>ערבית : 7:50</p>
+            </div>
+          </div>
+        </section>
+        <section className="shiurei-Tora" id="shiurei-Tora">
+          <h2 className="section-title">שיעורי תורה</h2>
+
+          {shiureiToraData.map((shiur) => {
+            return (
+              <div key={shiur.id} className=" shiurei-tora">
+                <div className="shiurei-tora__content">
+                  <h3 className="shiueri-Tora__title">{shiur.title}</h3>
+                  <p className="shiueri-Tora__text">{shiur.text}</p>
+                </div>
+                <img className="shiueri-Tora__img" src={shiur.image}></img>
+              </div>
+            );
+          })}
+        </section>
+        <section id="truma" >
+        <h2 className="section-title"> תרומה</h2>
+
+<div className="truma" >
+
+
+
+  
+</div>
+
+
+        </section>
+      </main>
     </div>
   );
 }
