@@ -226,7 +226,11 @@ function App() {
                   <h3 className="shiueri-Tora__title">{shiur.title}</h3>
                   <p className="shiueri-Tora__text">{shiur.text}</p>
                 </div>
-                <img className="shiueri-Tora__img" src={shiur.image}></img>
+                <img
+                  className="shiueri-Tora__img"
+                  src={shiur.image}
+                  alt="shiueri Tora"
+                ></img>
               </div>
             );
           })}

@@ -39,8 +39,6 @@ section {
   font-size: larger;
   padding: 10px;
   font-family: Ashkenaz;
-  
-
 }
 .header__navbar_item:hover {
   background-color: #ea5d5d;
@@ -62,7 +60,6 @@ section {
     no-repeat top center;
   font-family: "Ashkenaz";
   padding: 20px 80px;
-  max-width: 1246px;
   height: 74px;
   background-size: 100% 100% !important;
   font-weight: bolder;
@@ -231,9 +228,6 @@ section {
   animation-duration: 1.5s;
 }
 
-.slideshow-container {
-}
-
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -245,5 +239,5 @@ section {
 
 @font-face {
   font-family: Ashkenaz;
-  src: url(/Users/shalom/Desktop/SYNAGUCK/frontend/src/StamAshkenazCLMMedium.ttf);
+  src: url(./StamAshkenazCLMMedium.ttf);
 }
