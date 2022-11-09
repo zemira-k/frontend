@@ -110,6 +110,7 @@ section {
   /* float: right; */
   margin: 10px;
   padding: 10px;
+  font-size: small;
 }
 
 .seder-yom-chol {
@@ -276,5 +277,10 @@ flex-direction: column-reverse;
 @media screen and (max-width:420px) {
   .shiueri-Tora__img{
 margin: 10px  auto 10px;
+    } 
+}
+@media screen and (max-width:420px) {
+  .header__title {
+font-size: 26px;
     } 
 }
