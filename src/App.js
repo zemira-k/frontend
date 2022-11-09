@@ -147,12 +147,16 @@ const log =()=>{
           )}
 
           {/* <!-- Next and previous buttons --> */}
-          <button className="prev" onClick={handleLeftClick}>
-            &#10094;
-          </button>
-          <button className="next" onClick={handleRightClick}>
-            &#10095;
-          </button>
+          {count > 1 && (
+            <button className="prev" onClick={handleLeftClick}>
+              &#10094;
+            </button>
+          )}
+          {count < slides.length && (
+            <button className="next" onClick={handleRightClick}>
+              &#10095;
+            </button>
+          )}
         </div>
         <br />
 
