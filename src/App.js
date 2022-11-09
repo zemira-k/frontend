@@ -73,11 +73,21 @@ function App() {
     setCount(parseInt(e.target.id));
   }
 
+const log =()=>{
+  console.log("dvvs");
+  return (<div className="popup">
+<p>hello world</p>
+
+  </div>)
+}
+
+
+
+
   React.useEffect(() => {
     fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
       .then((response) => response.json())
       .then((resp) => {
-        console.log(resp.items);
         setData(resp);
 
         const d = new Date(resp.items[1].date);
@@ -229,6 +239,7 @@ function App() {
                 <div className="shiurei-tora__content">
                   <h3 className="shiueri-Tora__title">{shiur.title}</h3>
                   <p className="shiueri-Tora__text">{shiur.text}</p>
+                  <button onClick={log} >לצפיה בשיעורים קודמים</button>
                 </div>
                 <img
                   className="shiueri-Tora__img"
