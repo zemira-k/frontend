@@ -1,12 +1,13 @@
+import React from "react";
 import { FaUpload, FaWindowClose } from "react-icons/fa";
-
-export const ShiureiToraCollection = () => {
+import { Popup } from "./Popup";
+export const PopupEdit = (props) => {
+  
   return (
-    <div className="popup popup-open">
-      <FaWindowClose className="popup-close" />
-      <div className="popup-container">
-        {/* <img src={require("./images/1.jpg")} alt=""></img> */}
+    <Popup openPopup={props.openPopup}>
+
         <form className="popup-form">
+        <FaWindowClose className="popup-close"  onClick={props.closePopupfunc}/>
           <div className="popup-form-content">
             <label className="popup-form-label">שם השיעור:</label>
             <input
@@ -26,7 +27,6 @@ export const ShiureiToraCollection = () => {
             id="inputFile"
           />
         </form>
-      </div>
-    </div>
+        </Popup>
   );
 };
