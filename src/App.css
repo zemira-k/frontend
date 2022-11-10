@@ -133,6 +133,14 @@ section {
   margin-top: 20px;
 }
 
+.shiueri-Tora__btn{
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.055);
+  color: brown;
+  width: 25px;
+  height: 25px;
+}
+
 .shiurei-tora__content {
   box-sizing: border-box;
   background-color: #e9dfcf;
@@ -225,6 +233,19 @@ section {
   animation-duration: 1.5s;
   max-width: 1200px;
 }
+.slideshow-bin{
+  margin: auto;
+}
+
+.header__img-popup{
+   width: 100%;
+  height: 100%; 
+}
+.popup-title{
+  text-align: center;
+  font-family: "Ashkenaz";
+  font-size: 15px;
+}
 
 .popup {
   width: 100%;
@@ -278,11 +299,17 @@ section {
 }
 
 .popup-close {
-  position: absolute;
-  top: 10%;
-  right: 30%;
-  width: 35px;
-  height: 35px;
+ 
+    background-color: black;
+    position: absolute;
+    top: -26px;
+    right:-30px;
+    height: 26px;
+    width: 30px;
+    padding: 0px;
+    border: none;
+    color: white;
+
 }
 
 @keyframes fade {
@@ -335,5 +362,11 @@ section {
 @media screen and (max-width: 430px) {
   .header__title {
     font-size: 26px;
+  }
+}
+@media screen and (max-width: 430px) {
+ 
+.popup-close {
+   right: 0;
   }
 }
