@@ -200,16 +200,16 @@ function App() {
               <p>ערבית למצ״ש : 7:50</p>
             </div>
             <div className="parashat-shavoua item1">
-              <p> {data.items ? data.items[2].hebrew : "hee"}</p>
+              <p> {data.items ? data.items[2].title : "hee"}</p>
               <p>
                 {" "}
                 {data.items
-                  ? data.items[1].hebrew + " : " + time.hadlaka
+                  ? data.items[1].title + " : " + time.hadlaka
                   : "hee"}
               </p>
               <p>
                 {data.items
-                  ? data.items[3].hebrew + " : " + time.havdala
+                  ? data.items[3].title + " : " + time.havdala
                   : "hee"}
               </p>
               <p>משיב הרוח </p>
