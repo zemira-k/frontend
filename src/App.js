@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { ShiureiToraCollection } from "./ShiureiToraCollection.js";
 
 function App() {
   const [count, setCount] = React.useState(1);
@@ -73,11 +74,19 @@ function App() {
     setCount(parseInt(e.target.id));
   }
 
+  const log = () => {
+    console.log("dvvs");
+    return (
+      <div className="popup">
+        <p>hello world</p>
+      </div>
+    );
+  };
+
   React.useEffect(() => {
     fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
       .then((response) => response.json())
       .then((resp) => {
-        console.log(resp.items);
         setData(resp);
 
         const d = new Date(resp.items[1].date);
@@ -91,6 +100,7 @@ function App() {
 
   return (
     <div className="App">
+      <ShiureiToraCollection />
       <header id="header-menu">
         <nav>
           <ul className="header__navbar">
@@ -137,12 +147,16 @@ function App() {
           )}
 
           {/* <!-- Next and previous buttons --> */}
-          <button className="prev" onClick={handleLeftClick}>
-            &#10094;
-          </button>
-          <button className="next" onClick={handleRightClick}>
-            &#10095;
-          </button>
+          {count > 1 && (
+            <button className="prev" onClick={handleLeftClick}>
+              &#10094;
+            </button>
+          )}
+          {count < slides.length && (
+            <button className="next" onClick={handleRightClick}>
+              &#10095;
+            </button>
+          )}
         </div>
         <br />
 
@@ -225,8 +239,13 @@ function App() {
                 <div className="shiurei-tora__content">
                   <h3 className="shiueri-Tora__title">{shiur.title}</h3>
                   <p className="shiueri-Tora__text">{shiur.text}</p>
+                  <button onClick={log}>לצפיה בשיעורים קודמים</button>
                 </div>
-                <img className="shiueri-Tora__img" src={shiur.image}></img>
+                <img
+                  className="shiueri-Tora__img"
+                  src={shiur.image}
+                  alt="shiueri Tora"
+                ></img>
               </div>
             );
           })}
