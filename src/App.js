@@ -3,14 +3,13 @@ import "./App.css";
 import { PopupEdit } from "./PopupEdit.js";
 import { PopupShiuriTora } from "./PopupShiuriTora.js";
 import { FaEdit } from "react-icons/fa";
-import{Slides} from "./Slides"
+import { Slides } from "./Slides";
 function App() {
-
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState();
   const [time, setTime] = React.useState("");
-  const [popupEdit ,setPopupEdit] = React.useState(false)
-  const [popupShiuriTora ,setPopupShiuriTora] = React.useState(false)
- 
+  const [popupEdit, setPopupEdit] = React.useState(false);
+  const [popupShiuriTora, setPopupShiuriTora] = React.useState(false);
+
   const shiureiToraData = [
     {
       id: 1,
@@ -39,40 +38,48 @@ function App() {
   ];
 
   const openPopup = () => {
-    setPopupEdit(false)
-    setPopupShiuriTora(true)
+    setPopupEdit(false);
+    setPopupShiuriTora(true);
   };
   const openPopupEdit = () => {
-    setPopupEdit(true)
-    setPopupShiuriTora(false)
+    setPopupEdit(true);
+    setPopupShiuriTora(false);
   };
 
-  const closePopup =()=>{
-    setPopupEdit(false)
-    setPopupShiuriTora(false)
-  }
+  const closePopup = () => {
+    setPopupEdit(false);
+    setPopupShiuriTora(false);
+  };
 
   React.useEffect(() => {
     fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
       .then((response) => response.json())
       .then((resp) => {
-        console.log(resp);
-        setData(resp);
-
-        const d = new Date(resp.items[0].date);
+        const filtered = resp.items.filter((item) => {
+          return (
+            item.category === "candles" ||
+            item.category === "parashat" ||
+            item.category === "havdalah"
+          );
+        });
+        const d = new Date(filtered[0].date);
+        const h = new Date(filtered[2].date);
         setTime({
           hadlaka: `${d.getHours()}:${d.getMinutes()}`,
-          havdala: `${d.getHours() + 1}:${d.getMinutes()}`,
+          havdala: `${h.getHours()}:${h.getMinutes()}`,
         });
+        setData(filtered);        
       })
-      .catch(console.log);
+      .catch(console.log);      
   }, []);
 
   return (
     <div className="App">
-      
       <PopupEdit openPopup={popupEdit} closePopupfunc={closePopup} />
-      <PopupShiuriTora openPopup={popupShiuriTora} closePopupfunc={closePopup} />
+      <PopupShiuriTora
+        openPopup={popupShiuriTora}
+        closePopupfunc={closePopup}
+      />
       <header id="header-menu">
         <nav>
           <ul className="header__navbar">
@@ -102,8 +109,7 @@ function App() {
           </ul>
         </nav>
         <div className="header__title">בית כנסת בית אל הרצל יהוד</div>
-      <Slides/>
-    
+        <Slides />
       </header>
 
       <main>
@@ -121,18 +127,9 @@ function App() {
               <p>ערבית למצ״ש : 7:50</p>
             </div>
             <div className="parashat-shavoua item1">
-              <p> {data.items ? data.items[1].hebrew : "hee"}</p>
-              <p>
-                {" "}
-                {data.items
-                  ? data.items[0].hebrew + " : " + time.hadlaka
-                  : "hee"}
-              </p>
-              <p>
-                {data.items
-                  ? data.items[2].hebrew + " : " + time.havdala
-                  : "hee"}
-              </p>
+              <p> {data ? data[1].hebrew : "hee"}</p>
+              <p> {data ? data[0].hebrew + " : " + time.hadlaka : "hee"}</p>
+              <p>{data ? data[2].hebrew + " : " + time.havdala : "hee"}</p>
               <p>משיב הרוח </p>
             </div>
 
@@ -161,8 +158,9 @@ function App() {
                   <h3 className="shiueri-Tora__title">{shiur.title}</h3>
                   <p className="shiueri-Tora__text">{shiur.text}</p>
                   <button onClick={openPopup}>לצפיה בשיעורים קודמים</button>
-                  <button className="shiueri-Tora__btn" onClick={openPopupEdit}><FaEdit/></button>
-               
+                  <button className="shiueri-Tora__btn" onClick={openPopupEdit}>
+                    <FaEdit />
+                  </button>
                 </div>
                 <img
                   className="shiueri-Tora__img"
