@@ -56,9 +56,8 @@ function App() {
     fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
       .then((response) => response.json())
       .then((resp) => {
-        console.log(resp);
         setData(resp);
-
+        console.log(data);
         const d = new Date(resp.items[0].date);
         setTime({
           hadlaka: `${d.getHours()}:${d.getMinutes()}`,
