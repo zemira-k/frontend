@@ -1,13 +1,9 @@
-import React, { Children } from "react";
-import { FaUpload, FaWindowClose ,FaEdit } from "react-icons/fa";
+import React from "react";
 
-export const Popup = ( props) => { 
+export const Popup = (props) => {
   return (
-    <div className={props.openPopup?"popup popup-open":"popup"}>
-      <div className="popup-container">
-       
-            {props.children}
-      </div>
+    <div className={props.openPopup ? "popup popup-open" : "popup"}>
+      <div className="popup-container">{props.children}</div>
     </div>
   );
 };
