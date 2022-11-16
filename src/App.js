@@ -139,8 +139,8 @@ function App() {
         <section id="zmani-tefila">
           <h2 className="section-title">זמני תפילה</h2>
           <div className="content__section-title">
-          <h3 className="section-title">נץ החמה:   {dayTime.sunriseTime} 🌄</h3>
-          <h3 className="section-title">שקיעת החמה:   {dayTime.sunsetTime} 🌇</h3>
+          <h3 className="section-subtitle">נץ החמה:   {dayTime.sunriseTime} 🌄</h3>
+          <h3 className="section-subtitle">שקיעת החמה:   {dayTime.sunsetTime} 🌇</h3>
           </div>
           <div className="adsBored">
             <div className="parashat-shavoua item1">
