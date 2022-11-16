@@ -78,6 +78,7 @@ section {
 }
 
 .item1 {
+ 
   grid-area: parasha;
 }
 .item2 {
@@ -85,12 +86,19 @@ section {
 }
 .item3 {
   grid-area: shiur;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ 
 }
 .item4 {
   grid-area: chol;
 }
 .item5 {
   grid-area: siurchol;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .adsBored {
@@ -102,14 +110,24 @@ section {
 }
 
 .parashat-shavoua {
+  font-family: "Horev";
   background-color: #e9dfcf;
   border-radius: 10%;
   text-align: center;
   /* float: right; */
   margin: 10px;
   padding: 10px;
-  font-size: small;
+  font-weight: bold;
+  font-size: xx-large
+  
 }
+.parashat-img{
+  height: 250px;
+  width: 150px;
+  margin-left: 30px;
+
+}
+
 
 .seder-yom-chol {
   background-color: #d2cdc6;
@@ -238,8 +256,8 @@ section {
 }
 
 .header__img-popup{
-   width: 100%;
-  height: 100%; 
+   width: 450px;
+  height: 450px; 
 }
 .popup-title{
   text-align: center;
@@ -259,9 +277,21 @@ section {
   position: fixed;
 }
 
+.content__section-title{
+  display:  flex;
+  flex-direction: row-reverse;
+}
+
+.popup__content{
+
+  text-align: center;
+
+}
+
 .popup-container {
+  margin: 15px;
   max-width: 500px;
-  height: 500px;
+
   position: relative;
   margin: auto;
   background-color: white;
@@ -323,7 +353,12 @@ section {
 
 @font-face {
   font-family: Ashkenaz;
-  src: url(./StamAshkenazCLMMedium.ttf);
+  src: url(../public/fonts/StamAshkenazCLMMedium.ttf);
+}
+@font-face {
+  font-family: Horev;
+  src: url(../public/fonts/Horev\ CLM\ Heavy.ttf);
+ 
 }
 
 @media screen and (max-width: 430px) {
