@@ -105,7 +105,7 @@ section {
 .adsBored {
   display: grid;
   grid-template-areas:
-    "parasha parasha zmanim zmanim shiur shiur"
+    "shiur shiur zmanim zmanim  parasha parasha "
     "chol chol chol siurchol siurchol siurchol";
   gap: 10px;
 }
@@ -120,7 +120,6 @@ section {
   background-color: #e9dfcf;
   border-radius: 10%;
   text-align: center;
-  /* float: right; */
   margin: 10px;
   padding: 10px;
   font-weight: bold;
@@ -151,6 +150,7 @@ section {
   font-family: "Ashkenaz";
   font-size: 32px;
   margin-top: 0;
+  margin-left: 36px;
 }
 
 .shiurei-tora {
@@ -198,6 +198,7 @@ section {
   cursor: pointer;
   position: absolute;
   top: 50%;
+
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -208,7 +209,9 @@ section {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-
+.prev{
+  right: 92%;
+}
 /* Position the "next button" to the right */
 .next {
   right: 0;
@@ -269,14 +272,26 @@ section {
   margin: auto;
 }
 
+<<<<<<< HEAD
 .header__img-popup {
   width: 450px;
   height: 450px;
+=======
+.popup__text{
+  font-family: "Horev"; 
+  font-size: xx-large;
+}
+
+.header__img-popup{
+   width: 85%;
+  height: 85%; 
+>>>>>>> 978c8ca7f6702a72edb4d1987c038e784238581a
 }
 .popup-title {
   text-align: center;
   font-family: "Ashkenaz";
   font-size: 15px;
+  font-size: xx-large;
 }
 
 .popup {
@@ -428,6 +443,7 @@ section {
     right: 0;
   }
 }
+<<<<<<< HEAD
 @media screen and (max-width: 430px) {
   .adsBored {
     grid-template-areas:
@@ -436,5 +452,15 @@ section {
       "siurchol siurchol siurchol siurchol siurchol siurchol"
       "  chol chol chol  chol chol chol ";
     gap: 8px;
+=======
+@media screen and (max-width: 575px) {
+.adsBored {
+  grid-template-areas:
+  "parasha parasha parasha parasha parasha parasha"
+  "  shiur shiur shiur shiur  zmanim zmanim  "
+  "siurchol siurchol siurchol siurchol siurchol siurchol"
+  "  chol chol chol  chol chol chol ";
+gap: 8px;
+>>>>>>> 978c8ca7f6702a72edb4d1987c038e784238581a
   }
 }
