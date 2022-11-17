@@ -52,26 +52,26 @@ function App() {
     setPopupShiuriTora(false);
   };
 
-  
   React.useEffect(() => {
     fetch("https://www.hebcal.com/zmanim?cfg=json&geonameid=293397")
       .then((response) => response.json())
-      .then((res)=>{
-        const d = new Date(res.times.sunrise);  
-        const endD = new Date(res.times.sunset);  
-        //add 0 to time  when its show 7:9 to => 07:08 
-        const netzTime =  `0${d.getHours()}:${d.getMinutes() > 9?d.getMinutes() :`0${d.getMinutes()}`}`
-        const shkiaTime =  `${endD.getHours()}:${endD.getMinutes() > 9?endD.getMinutes() :`0${endD.getMinutes()}`}`   
+      .then((res) => {
+        const d = new Date(res.times.sunrise);
+        const endD = new Date(res.times.sunset);
+        //add 0 to time  when its show 7:9 to => 07:08
+        const netzTime = `0${d.getHours()}:${
+          d.getMinutes() > 9 ? d.getMinutes() : `0${d.getMinutes()}`
+        }`;
+        const shkiaTime = `${endD.getHours()}:${
+          endD.getMinutes() > 9 ? endD.getMinutes() : `0${endD.getMinutes()}`
+        }`;
         setDayTime({
-          sunriseTime:netzTime,
-          sunsetTime:shkiaTime
-        })  
-
-      }).catch(console.log)
-    })
-
-
-
+          sunriseTime: netzTime,
+          sunsetTime: shkiaTime,
+        });
+      })
+      .catch(console.log);
+  });
 
   React.useEffect(() => {
     fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
@@ -91,9 +91,9 @@ function App() {
           hadlaka: `${d.getHours()}:${d.getMinutes()}`,
           havdala: `${h.getHours()}:${h.getMinutes()}`,
         });
-        setData(filtered);        
+        setData(filtered);
       })
-      .catch(console.log);      
+      .catch(console.log);
   }, []);
 
   return (
@@ -139,8 +139,12 @@ function App() {
         <section id="zmani-tefila">
           <h2 className="section-title">זמני תפילה</h2>
           <div className="content__section-title">
-          <h3 className="section-subtitle">נץ החמה:   {dayTime.sunriseTime} 🌄</h3>
-          <h3 className="section-subtitle">שקיעת החמה:   {dayTime.sunsetTime} 🌇</h3>
+            <h3 className="section-subtitle">
+              נץ החמה: {dayTime.sunriseTime} 🌄
+            </h3>
+            <h3 className="section-subtitle">
+              שקיעת החמה: {dayTime.sunsetTime} 🌇
+            </h3>
           </div>
           <div className="adsBored">
             <div className="parashat-shavoua item1">
@@ -158,13 +162,20 @@ function App() {
               <p>ערבית למצ״ש : 7:50</p>
             </div>
             <div className="parashat-shavoua item3">
-            <div className="parsha-content">
-              <p> {data ? data[1].hebrew : ""}</p>
-              <p> {data ? data[0].hebrew + " : " + shabatTime.hadlaka : ""}</p>
-              <p>{data ? data[2].hebrew + " : " + shabatTime.havdala : ""}</p>
-              <p>משיב הרוח </p>
-            </div>
-            <img className="parashat-img" src="https://chabadraanana.com/wp-content/uploads/2020/08/%D7%A0%D7%99%D7%A8%D7%95%D7%AA-%D7%A9%D7%91%D7%AA.png"/>
+              <div className="parsha-content">
+                <p> {data ? data[1].hebrew : ""}</p>
+                <p>
+                  {" "}
+                  {data ? data[0].hebrew + " : " + shabatTime.hadlaka : ""}
+                </p>
+                <p>{data ? data[2].hebrew + " : " + shabatTime.havdala : ""}</p>
+                <p>משיב הרוח </p>
+              </div>
+              <img
+                className="parashat-img"
+                src="https://chabadraanana.com/wp-content/uploads/2020/08/%D7%A0%D7%99%D7%A8%D7%95%D7%AA-%D7%A9%D7%91%D7%AA.png"
+                alt="parasha"
+              />
             </div>
             <div className="parashat-shavoua item4">
               <p> ערבית לשבת : 6:40</p>
@@ -174,14 +185,17 @@ function App() {
             </div>
 
             <div className="parashat-shavoua item5">
-            <div>
-              <p> ערבית : 6:40</p>
-              <p>שחרית : 7:50</p>
-              <p>מנחה : 7:50</p>
-              <p>ערבית : 7:50</p>
+              <div>
+                <p> ערבית : 6:40</p>
+                <p>שחרית : 7:50</p>
+                <p>מנחה : 7:50</p>
+                <p>ערבית : 7:50</p>
               </div>
-              <img className="parashat-img" src={require("./images/pngwing.com (4).png")}/>
-
+              <img
+                className="parashat-img"
+                src={require("./images/pngwing.com (4).png")}
+                alt="parasha"
+              />
             </div>
           </div>
         </section>
