@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/aviran6709/frontend/static/css/main.cf3aa5b4.css",
-    "main.js": "/aviran6709/frontend/static/js/main.9f94bb41.js",
-    "static/js/787.cda612ba.chunk.js": "/aviran6709/frontend/static/js/787.cda612ba.chunk.js",
-    "static/media/pngwing.com (4).png": "/aviran6709/frontend/static/media/pngwing.com (4).5fcc94068a7aa63cc4ff.png",
-    "static/media/Bar_micva.jpeg": "/aviran6709/frontend/static/media/Bar_micva.656261982345e4be5a69.jpeg",
-    "static/media/3.jpg": "/aviran6709/frontend/static/media/3.130e678dfb0999f30dec.jpg",
-    "static/media/4.jpg": "/aviran6709/frontend/static/media/4.5aafa7a4481da4b6e2c6.jpg",
-    "static/media/StamAshkenazCLMMedium.ttf": "/aviran6709/frontend/static/media/StamAshkenazCLMMedium.bd6d2ca39f159053b8d6.ttf",
-    "static/media/2.jpg": "/aviran6709/frontend/static/media/2.073f4f659f160172ac85.jpg",
-    "static/media/1.jpg": "/aviran6709/frontend/static/media/1.f7d29c2f5d86f1d3e969.jpg",
-    "static/media/Horev CLM Heavy.ttf": "/aviran6709/frontend/static/media/Horev CLM Heavy.cb0b4760fe081d4b8b2f.ttf",
-    "index.html": "/aviran6709/frontend/index.html",
-    "main.cf3aa5b4.css.map": "/aviran6709/frontend/static/css/main.cf3aa5b4.css.map",
-    "main.9f94bb41.js.map": "/aviran6709/frontend/static/js/main.9f94bb41.js.map",
-    "787.cda612ba.chunk.js.map": "/aviran6709/frontend/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/zemira-k/frontend/static/css/main.520fc468.css",
+    "main.js": "/zemira-k/frontend/static/js/main.fbfa9409.js",
+    "static/js/787.cda612ba.chunk.js": "/zemira-k/frontend/static/js/787.cda612ba.chunk.js",
+    "static/media/pngwing.com.png": "/zemira-k/frontend/static/media/pngwing.com.35b9cdf9b0ad35d25b8c.png",
+    "static/media/pngwing.com (4).png": "/zemira-k/frontend/static/media/pngwing.com (4).5fcc94068a7aa63cc4ff.png",
+    "static/media/Bar_micva.jpeg": "/zemira-k/frontend/static/media/Bar_micva.656261982345e4be5a69.jpeg",
+    "static/media/3.jpg": "/zemira-k/frontend/static/media/3.130e678dfb0999f30dec.jpg",
+    "static/media/4.jpg": "/zemira-k/frontend/static/media/4.5aafa7a4481da4b6e2c6.jpg",
+    "static/media/StamAshkenazCLMMedium.ttf": "/zemira-k/frontend/static/media/StamAshkenazCLMMedium.bd6d2ca39f159053b8d6.ttf",
+    "static/media/2.jpg": "/zemira-k/frontend/static/media/2.073f4f659f160172ac85.jpg",
+    "static/media/1.jpg": "/zemira-k/frontend/static/media/1.f7d29c2f5d86f1d3e969.jpg",
+    "static/media/Horev CLM Heavy.ttf": "/zemira-k/frontend/static/media/Horev CLM Heavy.cb0b4760fe081d4b8b2f.ttf",
+    "index.html": "/zemira-k/frontend/index.html",
+    "main.520fc468.css.map": "/zemira-k/frontend/static/css/main.520fc468.css.map",
+    "main.fbfa9409.js.map": "/zemira-k/frontend/static/js/main.fbfa9409.js.map",
+    "787.cda612ba.chunk.js.map": "/zemira-k/frontend/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf3aa5b4.css",
-    "static/js/main.9f94bb41.js"
+    "static/css/main.520fc468.css",
+    "static/js/main.fbfa9409.js"
   ]
 }
