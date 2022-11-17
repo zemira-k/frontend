@@ -2,6 +2,10 @@
   box-sizing: border-box;
 } */
 
+* {
+  margin: 0;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -31,16 +35,18 @@ section {
   color: rgb(87, 1, 1);
   border-bottom: rgb(87, 1, 1) solid 2px;
   border-radius: 8%;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 1;
 }
 .header__navbar_item {
   box-sizing: border-box;
   margin: 20px 20px 3px;
   list-style: none;
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Ashkenaz, "Times New Roman", Times, serif;
   font-size: larger;
   padding: 10px;
-  font-family: Ashkenaz;
 }
 .header__navbar_item:hover {
   background-color: #ea5d5d;
@@ -69,7 +75,7 @@ section {
   background-size: 100% 100% !important;
   font-weight: bolder;
   font-size: 36px;
-  margin: 0 0 16px;
+  margin: 70px 0 16px;
   text-align: center;
 }
 
@@ -148,7 +154,7 @@ section {
 
 .section-subtitle {
   font-family: "Ashkenaz";
-  font-size: 32px;
+  font-size: 30px;
   margin-top: 0;
   margin-left: 36px;
 }
@@ -209,7 +215,7 @@ section {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-.prev{
+.prev {
   right: 92%;
 }
 /* Position the "next button" to the right */
@@ -272,20 +278,14 @@ section {
   margin: auto;
 }
 
-<<<<<<< HEAD
-.header__img-popup {
-  width: 450px;
-  height: 450px;
-=======
-.popup__text{
-  font-family: "Horev"; 
+.popup__text {
+  font-family: "Horev";
   font-size: xx-large;
 }
 
-.header__img-popup{
-   width: 85%;
-  height: 85%; 
->>>>>>> 978c8ca7f6702a72edb4d1987c038e784238581a
+.header__img-popup {
+  width: 85%;
+  height: 85%;
 }
 .popup-title {
   text-align: center;
@@ -367,6 +367,61 @@ section {
   color: white;
 }
 
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.form-input {
+  background-color: inherit;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.scroll {
+  font-family: "Noto Serif Hebrew";
+  letter-spacing: 1px;
+  font-size: 22px;
+  direction: rtl;
+  padding: 70px 30px;
+  height: 260px;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  background-image: url("./images/pngwing.com.png");
+}
+
+.scroll-subtitle {
+  width: 220px;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text-area {
+  display: flex;
+}
+
+.footer-info {
+  display: flex;
+  justify-content:space-around;
+  padding: 30px 0;
+}
+
+.footer-map {
+  width: 400px;
+  height: 200px;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -443,8 +498,7 @@ section {
     right: 0;
   }
 }
-<<<<<<< HEAD
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 575px) {
   .adsBored {
     grid-template-areas:
       "parasha parasha parasha parasha parasha parasha"
@@ -452,15 +506,5 @@ section {
       "siurchol siurchol siurchol siurchol siurchol siurchol"
       "  chol chol chol  chol chol chol ";
     gap: 8px;
-=======
-@media screen and (max-width: 575px) {
-.adsBored {
-  grid-template-areas:
-  "parasha parasha parasha parasha parasha parasha"
-  "  shiur shiur shiur shiur  zmanim zmanim  "
-  "siurchol siurchol siurchol siurchol siurchol siurchol"
-  "  chol chol chol  chol chol chol ";
-gap: 8px;
->>>>>>> 978c8ca7f6702a72edb4d1987c038e784238581a
   }
 }

@@ -15,7 +15,7 @@ function App() {
     {
       id: 1,
       title: "שיעור בטעמי המקרא",
-      text: "שיעור שבועי בטעמי המקרא כל יום בשלישי ב 8 בערב בשיעור זה ילמדו התלמדידים לקרוא בתורה ובפרשת שבוע בנוסך ילמדו בתלמידים שירי שבת ומקמים עם החזן מאור סובול",
+      text: "שיעור שבועי בטעמי המקרא כל יום בשלישי ב 8 בערב בשיעור זה ילמדו התלמידים לקרוא בתורה ובפרשת שבוע בנוסך ילמדו בתלמידים שירי שבת ומקמים עם החזן מאור סובול",
       image: require("./images/1.jpg"),
     },
     {
@@ -106,10 +106,15 @@ function App() {
       <header id="header-menu">
         <nav>
           <ul className="header__navbar">
-            <li className="header__navbar_item">צור קשר</li>
             <li className="header__navbar_item">
               {" "}
-              <a className="header__navbar_link" href="#truma">
+              <a className="header__navbar_link" href="#contact">
+                צור קשר
+              </a>
+            </li>
+            <li className="header__navbar_item">
+              {" "}
+              <a className="header__navbar_link" href="#donation">
                 תרומה
               </a>
             </li>
@@ -222,12 +227,87 @@ function App() {
             );
           })}
         </section>
-        <section id="truma">
+        <section id="donation">
           <h2 className="section-title"> תרומה</h2>
 
-          <div className="truma"></div>
+          <div className="donation"></div>
+        </section>
+        <section id="contact">
+          <h2 className="section-title">צור קשר</h2>
+          <div className="contact">
+            <div className="scroll">
+              <h2>נוהג בית הכנסת</h2>
+              <ol>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+                <li>אין לדבר בשעת התפילה</li>
+              </ol>
+            </div>
+            <div className="scroll">
+              <p className="scroll-subtitle">
+                לסגירת אירועים באולם בית הכנסת נא למלא פרטים:
+              </p>
+              <form className="form">
+                <div>
+                  <label>שם מלא:</label>
+                  <input className="form-input"></input>
+                </div>
+                <div>
+                  <label>טלפון:</label>
+                  <input className="form-input"></input>
+                </div>
+                <div>
+                  <label>מייל:</label>
+                  <input className="form-input"></input>
+                </div>
+                <div className="text-area">
+                  <label>הערות:</label>
+                  <textarea className="form-input"></textarea>
+                </div>
+                <button type="submit">שלח</button>
+              </form>
+            </div>
+          </div>
         </section>
       </main>
+      <footer>
+        <div className="footer-info">
+          <div>
+            כל הזכויות שמורות ל
+            <a
+              href="https://github.com/aviran6709"
+              target="_blank"
+              rel="noreferrer"
+            >
+              אבירן
+            </a>{" "}
+            <a
+              href="https://github.com/zemira-k"
+              target="_blank"
+              rel="noreferrer"
+            >
+              וזמירה
+            </a>{" "}
+            &copy;
+          </div>
+          <div className="footer-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6050.379242029409!2d34.88673683292689!3d32.0336743648821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d350b5c5190f1%3A0xccc78efbdd33a832!2z15HXmdeqINeb16DXodeqINeR15nXqiDXkNec!5e0!3m2!1siw!2sil!4v1668678849196!5m2!1siw!2sil"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="myFrame"
+              width="100%"
+              height="100%"
+            ></iframe>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
