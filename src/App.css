@@ -58,6 +58,9 @@ section {
   margin: auto;
 }
 .header__title {
+  color: #333333;
+  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+
   background: url(https://ydat.co.il/wp-content/themes/ydat/images/title-header.jpg)
     no-repeat top center;
   font-family: "Ashkenaz";
@@ -78,19 +81,27 @@ section {
 }
 
 .item1 {
-  grid-area: parasha;
+ 
+  grid-area: shiur;
 }
 .item2 {
   grid-area: zmanim;
 }
 .item3 {
-  grid-area: shiur;
+  grid-area: parasha ;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ 
 }
 .item4 {
   grid-area: chol;
 }
 .item5 {
   grid-area: siurchol;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .adsBored {
@@ -102,14 +113,28 @@ section {
 }
 
 .parashat-shavoua {
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 50px 50px 50px 50px rgba(0,0,0,0); 
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 50px 50px 50px 50px rgba(0,0,0,0);
+
+  font-family: "Horev";
   background-color: #e9dfcf;
   border-radius: 10%;
   text-align: center;
   /* float: right; */
   margin: 10px;
   padding: 10px;
-  font-size: small;
+  font-weight: bold;
+  font-size: xx-large
+
+  
 }
+.parashat-img{
+  height: 250px;
+  width: 150px;
+  margin-left: 30px;
+
+}
+
 
 .seder-yom-chol {
   background-color: #d2cdc6;
@@ -118,6 +143,7 @@ section {
 }
 
 .section-title {
+  
   text-align: right;
   font-weight: bolder;
   font-family: "Ashkenaz";
@@ -126,7 +152,17 @@ section {
   margin-right: 30px;
 }
 
+.section-subtitle{
+  font-family: "Ashkenaz";
+  font-size: 32px;
+  margin-top: 0;
+}
+
+
 .shiurei-tora {
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: inset -1px 3px 8px 5px #592b2b, 2px 5px 16px 0px #0b325e, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+  background: #e8dfcf;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -238,8 +274,8 @@ section {
 }
 
 .header__img-popup{
-   width: 100%;
-  height: 100%; 
+   width: 450px;
+  height: 450px; 
 }
 .popup-title{
   text-align: center;
@@ -259,9 +295,24 @@ section {
   position: fixed;
 }
 
+.content__section-title{
+  display:  flex;
+  flex-direction: row-reverse;
+}
+
+
+
+
+.popup__content{
+
+  text-align: center;
+
+}
+
 .popup-container {
+  margin: 15px;
   max-width: 500px;
-  height: 500px;
+
   position: relative;
   margin: auto;
   background-color: white;
@@ -323,7 +374,12 @@ section {
 
 @font-face {
   font-family: Ashkenaz;
-  src: url(./StamAshkenazCLMMedium.ttf);
+  src: url(../public/fonts/StamAshkenazCLMMedium.ttf);
+}
+@font-face {
+  font-family: Horev;
+  src: url(../public/fonts/Horev\ CLM\ Heavy.ttf);
+ 
 }
 
 @media screen and (max-width: 430px) {
@@ -365,8 +421,34 @@ section {
   }
 }
 @media screen and (max-width: 430px) {
+  .section-title {
+    width: fit-content;
+    font-size: 46px;
+    margin:  0 auto 20px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.218);
+  }
+}
+@media screen and (max-width: 430px) {
+  .content__section-title {
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+}
+@media screen and (max-width: 430px) {
  
 .popup-close {
    right: 0;
+  }
+}
+@media screen and (max-width: 430px) {
+ 
+.adsBored {
+  grid-template-areas:
+  "parasha parasha parasha parasha parasha parasha"
+  "  shiur shiur shiur shiur  zmanim zmanim  "
+  "siurchol siurchol siurchol siurchol siurchol siurchol"
+  "  chol chol chol  chol chol chol ";
+gap: 8px;
   }
 }

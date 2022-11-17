@@ -6,7 +6,8 @@ import { FaEdit } from "react-icons/fa";
 import { Slides } from "./Slides";
 function App() {
   const [data, setData] = React.useState();
-  const [time, setTime] = React.useState("");
+  const [shabatTime, setShabatTime] = React.useState("");
+  const [dayTime, setDayTime] = React.useState("");
   const [popupEdit, setPopupEdit] = React.useState(false);
   const [popupShiuriTora, setPopupShiuriTora] = React.useState(false);
 
@@ -51,6 +52,27 @@ function App() {
     setPopupShiuriTora(false);
   };
 
+  
+  React.useEffect(() => {
+    fetch("https://www.hebcal.com/zmanim?cfg=json&geonameid=293397")
+      .then((response) => response.json())
+      .then((res)=>{
+        const d = new Date(res.times.sunrise);  
+        const endD = new Date(res.times.sunset);  
+        //add 0 to time  when its show 7:9 to => 07:08 
+        const netzTime =  `0${d.getHours()}:${d.getMinutes() > 9?d.getMinutes() :`0${d.getMinutes()}`}`
+        const shkiaTime =  `${endD.getHours()}:${endD.getMinutes() > 9?endD.getMinutes() :`0${endD.getMinutes()}`}`   
+        setDayTime({
+          sunriseTime:netzTime,
+          sunsetTime:shkiaTime
+        })  
+
+      }).catch(console.log)
+    })
+
+
+
+
   React.useEffect(() => {
     fetch("https://www.hebcal.com/shabbat?cfg=json&geonameid=293397&M=on")
       .then((response) => response.json())
@@ -64,7 +86,8 @@ function App() {
         });
         const d = new Date(filtered[0].date);
         const h = new Date(filtered[2].date);
-        setTime({
+
+        setShabatTime({
           hadlaka: `${d.getHours()}:${d.getMinutes()}`,
           havdala: `${h.getHours()}:${h.getMinutes()}`,
         });
@@ -115,8 +138,16 @@ function App() {
       <main>
         <section id="zmani-tefila">
           <h2 className="section-title">זמני תפילה</h2>
+          <div className="content__section-title">
+          <h3 className="section-subtitle">נץ החמה:   {dayTime.sunriseTime} 🌄</h3>
+          <h3 className="section-subtitle">שקיעת החמה:   {dayTime.sunsetTime} 🌇</h3>
+          </div>
           <div className="adsBored">
-            <div className="parashat-shavoua item3">
+            <div className="parashat-shavoua item1">
+              <p>שיעור עם רב ניב</p>
+              <p>שיעור הלכות עם יניב</p>
+              <p>שיעור עם יעקוב ישראל</p>
+              <p>שיעור עם יעקוב ישראל</p>
               <p>שיעור עם יעקוב ישראל</p>
             </div>
 
@@ -126,13 +157,15 @@ function App() {
               <p>מנחה לשבת : 7:50</p>
               <p>ערבית למצ״ש : 7:50</p>
             </div>
-            <div className="parashat-shavoua item1">
-              <p> {data ? data[1].hebrew : "hee"}</p>
-              <p> {data ? data[0].hebrew + " : " + time.hadlaka : "hee"}</p>
-              <p>{data ? data[2].hebrew + " : " + time.havdala : "hee"}</p>
+            <div className="parashat-shavoua item3">
+            <div className="parsha-content">
+              <p> {data ? data[1].hebrew : ""}</p>
+              <p> {data ? data[0].hebrew + " : " + shabatTime.hadlaka : ""}</p>
+              <p>{data ? data[2].hebrew + " : " + shabatTime.havdala : ""}</p>
               <p>משיב הרוח </p>
             </div>
-
+            <img className="parashat-img" src="https://chabadraanana.com/wp-content/uploads/2020/08/%D7%A0%D7%99%D7%A8%D7%95%D7%AA-%D7%A9%D7%91%D7%AA.png"/>
+            </div>
             <div className="parashat-shavoua item4">
               <p> ערבית לשבת : 6:40</p>
               <p>שחרית לשבת : 7:50</p>
@@ -141,10 +174,14 @@ function App() {
             </div>
 
             <div className="parashat-shavoua item5">
+            <div>
               <p> ערבית : 6:40</p>
               <p>שחרית : 7:50</p>
               <p>מנחה : 7:50</p>
               <p>ערבית : 7:50</p>
+              </div>
+              <img className="parashat-img" src={require("./images/pngwing.com (4).png")}/>
+
             </div>
           </div>
         </section>
