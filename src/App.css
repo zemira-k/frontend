@@ -81,18 +81,16 @@ section {
 }
 
 .item1 {
- 
   grid-area: shiur;
 }
 .item2 {
   grid-area: zmanim;
 }
 .item3 {
-  grid-area: parasha ;
+  grid-area: parasha;
   display: flex;
- align-items: center;
- justify-content: center;
- 
+  align-items: center;
+  justify-content: center;
 }
 .item4 {
   grid-area: chol;
@@ -113,8 +111,10 @@ section {
 }
 
 .parashat-shavoua {
-  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 50px 50px 50px 50px rgba(0,0,0,0); 
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 50px 50px 50px 50px rgba(0,0,0,0);
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    50px 50px 50px 50px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    50px 50px 50px 50px rgba(0, 0, 0, 0);
 
   font-family: "Horev";
   background-color: #e9dfcf;
@@ -124,17 +124,13 @@ section {
   margin: 10px;
   padding: 10px;
   font-weight: bold;
-  font-size: xx-large
-
-  
+  font-size: xx-large;
 }
-.parashat-img{
+.parashat-img {
   height: 250px;
   width: 150px;
   margin-left: 30px;
-
 }
-
 
 .seder-yom-chol {
   background-color: #d2cdc6;
@@ -143,7 +139,6 @@ section {
 }
 
 .section-title {
-  
   text-align: right;
   font-weight: bolder;
   font-family: "Ashkenaz";
@@ -152,16 +147,17 @@ section {
   margin-right: 30px;
 }
 
-.section-subtitle{
+.section-subtitle {
   font-family: "Ashkenaz";
   font-size: 32px;
   margin-top: 0;
 }
 
-
 .shiurei-tora {
-  -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
-  box-shadow: inset -1px 3px 8px 5px #592b2b, 2px 5px 16px 0px #0b325e, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: inset -1px 3px 8px 5px #592b2b, 2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgb(0 0 0 / 0%);
   background: #e8dfcf;
   display: flex;
   justify-content: center;
@@ -169,7 +165,7 @@ section {
   margin-top: 20px;
 }
 
-.shiueri-Tora__btn{
+.shiueri-Tora__btn {
   border: 0;
   background-color: rgba(0, 0, 0, 0.055);
   color: brown;
@@ -269,15 +265,15 @@ section {
   animation-duration: 1.5s;
   max-width: 1200px;
 }
-.slideshow-bin{
+.slideshow-bin {
   margin: auto;
 }
 
-.header__img-popup{
-   width: 450px;
-  height: 450px; 
+.header__img-popup {
+  width: 450px;
+  height: 450px;
 }
-.popup-title{
+.popup-title {
   text-align: center;
   font-family: "Ashkenaz";
   font-size: 15px;
@@ -295,18 +291,13 @@ section {
   position: fixed;
 }
 
-.content__section-title{
-  display:  flex;
+.content__section-title {
+  display: flex;
   flex-direction: row-reverse;
 }
 
-
-
-
-.popup__content{
-
+.popup__content {
   text-align: center;
-
 }
 
 .popup-container {
@@ -350,17 +341,15 @@ section {
 }
 
 .popup-close {
- 
-    background-color: black;
-    position: absolute;
-    top: -26px;
-    right:-30px;
-    height: 26px;
-    width: 30px;
-    padding: 0px;
-    border: none;
-    color: white;
-
+  background-color: black;
+  position: absolute;
+  top: -26px;
+  right: -30px;
+  height: 26px;
+  width: 30px;
+  padding: 0px;
+  border: none;
+  color: white;
 }
 
 @keyframes fade {
@@ -379,7 +368,6 @@ section {
 @font-face {
   font-family: Horev;
   src: url(../public/fonts/Horev\ CLM\ Heavy.ttf);
- 
 }
 
 @media screen and (max-width: 430px) {
@@ -424,31 +412,29 @@ section {
   .section-title {
     width: fit-content;
     font-size: 46px;
-    margin:  0 auto 20px;
+    margin: 0 auto 20px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.218);
   }
 }
 @media screen and (max-width: 430px) {
   .content__section-title {
     flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media screen and (max-width: 430px) {
- 
-.popup-close {
-   right: 0;
+  .popup-close {
+    right: 0;
   }
 }
 @media screen and (max-width: 430px) {
- 
-.adsBored {
-  grid-template-areas:
-  "parasha parasha parasha parasha parasha parasha"
-  "  shiur shiur shiur shiur  zmanim zmanim  "
-  "siurchol siurchol siurchol siurchol siurchol siurchol"
-  "  chol chol chol  chol chol chol ";
-gap: 8px;
+  .adsBored {
+    grid-template-areas:
+      "parasha parasha parasha parasha parasha parasha"
+      "  shiur shiur shiur shiur  zmanim zmanim  "
+      "siurchol siurchol siurchol siurchol siurchol siurchol"
+      "  chol chol chol  chol chol chol ";
+    gap: 8px;
   }
 }
