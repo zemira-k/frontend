@@ -14,7 +14,7 @@ function App() {
   const [dayTime, setDayTime] = React.useState("");
   const [popupEdit, setPopupEdit] = React.useState(false);
   const [popupShiuriTora, setPopupShiuriTora] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(false)
+  const [isVisible, setIsVisible] = React.useState(false);
 
   const shiureiToraData = [
     {
@@ -55,12 +55,20 @@ function App() {
   const closePopup = () => {
     setPopupEdit(false);
     setPopupShiuriTora(false);
-    setIsVisible(false)
+    setIsVisible(false);
   };
 
-const openMenu=()=>{
-  setIsVisible(true)
-}
+  const closeByOverlayClick = (e) => {
+    closePopup();
+    e.stopPropagation();
+  };
+  const onModalClick = (e) => {
+    e.stopPropagation();
+  };
+
+  const openMenu = () => {
+    setIsVisible(true);
+  };
 
   React.useEffect(() => {
     fetch("https://www.hebcal.com/zmanim?cfg=json&geonameid=293397")
@@ -108,18 +116,34 @@ const openMenu=()=>{
 
   return (
     <div className="App">
-      <PopupEdit closePopup={closePopup} openPopup={popupEdit} closePopupfunc={closePopup} />
+      <PopupEdit
+        onOverlayClick={closeByOverlayClick}
+        onModalClick={onModalClick}
+        openPopup={popupEdit}
+        closePopupfunc={closePopup}
+      />
       <PopupShiuriTora
-      closePopup={closePopup}
+        onOverlayClick={closeByOverlayClick}
+        onModalClick={onModalClick}
         openPopup={popupShiuriTora}
         closePopupfunc={closePopup}
-      /> 
+      />
       <header id="header-menu">
-        {isVisible?<Popup smallNav={true} closePopup={closePopup} openPopup={true}><Navbar isVisible={isVisible}></Navbar></Popup> : <Navbar isVisible={isVisible}></Navbar> 
-        }
-        <button className="menu-btn"  onClick={openMenu} ><TiThMenu/></button>
-     
-  
+        {isVisible ? (
+          <Popup
+            smallNav={true}
+            onOverlayClick={closePopup}
+            openPopup={true}
+          >
+            <Navbar isVisible={isVisible}></Navbar>
+          </Popup>
+        ) : (
+          <Navbar isVisible={isVisible}></Navbar>
+        )}
+        <button className="menu-btn" onClick={openMenu}>
+          <TiThMenu />
+        </button>
+
         <div className="header__title">בית כנסת בית אל הרצל יהוד</div>
         <Slides />
       </header>
@@ -275,7 +299,7 @@ const openMenu=()=>{
           <div className="footer-content">
             <div>
               <h4>גבאי בית הכנסת : עמוס נימני</h4>
-              <h4>כתובת: הרצל  21 יהוד</h4>
+              <h4>כתובת: הרצל 21 יהוד</h4>
             </div>
             <div>
               כל הזכויות שמורות ל

@@ -25,19 +25,18 @@ section {
   border-bottom: rgb(87, 1, 1) solid 2px;
 }
 
-
-.menu-btn{
+.menu-btn {
   border: 0;
   box-sizing: border-box;
   position: fixed;
   right: 10px;
   top: 10px;
-  background-color: inherit;
+  background-color: white;
   padding: 4px;
-display: none;
-font-size: xx-large;
-cursor: pointer;
-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+  display: none;
+  font-size: xx-large;
+  cursor: pointer;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     50px 50px 50px 50px rgba(0, 0, 0, 0);
 }
 
@@ -54,11 +53,7 @@ box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
   position: fixed;
   background-color: rgba(255, 255, 255, 1);
   z-index: 1;
- 
 }
-
-
-
 
 .header__navbar_item {
   box-sizing: border-box;
@@ -107,16 +102,15 @@ box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
   padding: 2px;
 }
 
-
 .parashat-shavoua {
   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     50px 50px 50px 50px rgba(0, 0, 0, 0);
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     50px 50px 50px 50px rgba(0, 0, 0, 0);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: "Horev";
   background-color: #e9dfcf;
   border-radius: 10%;
@@ -158,7 +152,6 @@ justify-content: center;
     "chol chol chol siurchol siurchol siurchol";
   gap: 10px;
 }
-
 
 .parashat-img {
   height: 250px;
@@ -219,8 +212,8 @@ justify-content: center;
   font-size: 22px;
   font-weight: bold;
 }
-.shiueri-Tora__text{
-  margin: 20px auto ;
+.shiueri-Tora__text {
+  margin: 20px auto;
 }
 
 .shiueri-Tora__img {
@@ -338,12 +331,7 @@ justify-content: center;
   visibility: hidden;
   display: flex;
   position: fixed;
- 
 }
-.popup-smallNav{
-  justify-content:flex-start;
-}
-
 
 
 .content__section-title {
@@ -362,13 +350,6 @@ justify-content: center;
   position: relative;
   margin: auto;
   background-color: white;
-}
-
-
-.popup-container-_small{
-  margin: 0;
-  background-color: white;
-
 }
 
 .popup-open {
@@ -430,8 +411,8 @@ justify-content: center;
 
 .form-input {
   background-color: inherit;
-    border: 0;
-    border-bottom: 1px solid black;
+  border: 0;
+  border-bottom: 1px solid black;
 }
 
 .scroll {
@@ -450,9 +431,9 @@ justify-content: center;
 
 .scroll-subtitle {
   width: 220px;
-    margin: 10px 0;
-    font-size: 18px;
-    font-weight: bold;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .text-area {
@@ -461,7 +442,7 @@ justify-content: center;
 
 .footer-info {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 30px 0;
   gap: 10px;
@@ -472,9 +453,8 @@ justify-content: center;
   padding: 15px;
   max-width: 400px;
   height: 200px;
-
 }
-.footer-content{
+.footer-content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -497,7 +477,6 @@ justify-content: center;
   font-family: Horev;
   src: url(../public/fonts/Horev\ CLM\ Heavy.ttf);
 }
-
 
 @media screen and (max-width: 430px) {
   .header__img {
@@ -545,7 +524,6 @@ justify-content: center;
   }
 }
 
-
 @media screen and (max-width: 575px) {
   .adsBored {
     grid-template-areas:
@@ -554,22 +532,30 @@ justify-content: center;
       "siurchol siurchol siurchol siurchol siurchol siurchol"
       "  chol chol chol  chol chol chol ";
     gap: 8px;
-
   }
-.header__navbar {
-display: none;
+  .header__navbar {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+    z-index: 10;
+  }
 
-}.menu-btn{
-  display: block;
+  .header__small-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
 
-}
-.header__small-navbar{
-  display: flex;
-  flex-direction: column;
-align-items: center;
-flex-direction: column-reverse;
+  .popup-container-_small {
+    margin: 10px;
+    background-color: white;
+    height: 180px;
+  }
 
-}
-
-
+  .popup-smallNav {
+    justify-content: flex-end;
+    z-index: 20;
+  }
 }
