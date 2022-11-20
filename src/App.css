@@ -25,6 +25,22 @@ section {
   border-bottom: rgb(87, 1, 1) solid 2px;
 }
 
+
+.menu-btn{
+  border: 0;
+  box-sizing: border-box;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background-color: inherit;
+  padding: 4px;
+display: none;
+font-size: xx-large;
+cursor: pointer;
+box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    50px 50px 50px 50px rgba(0, 0, 0, 0);
+}
+
 .header__navbar {
   margin: auto 0 30px;
   display: flex;
@@ -38,7 +54,12 @@ section {
   position: fixed;
   background-color: rgba(255, 255, 255, 1);
   z-index: 1;
+ 
 }
+
+
+
+
 .header__navbar_item {
   box-sizing: border-box;
   margin: 20px 20px 3px;
@@ -86,6 +107,26 @@ section {
   padding: 2px;
 }
 
+
+.parashat-shavoua {
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    50px 50px 50px 50px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    50px 50px 50px 50px rgba(0, 0, 0, 0);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  font-family: "Horev";
+  background-color: #e9dfcf;
+  border-radius: 10%;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
 .item1 {
   grid-area: shiur;
 }
@@ -95,6 +136,7 @@ section {
 .item3 {
   grid-area: parasha;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -104,6 +146,7 @@ section {
 .item5 {
   grid-area: siurchol;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -116,21 +159,7 @@ section {
   gap: 10px;
 }
 
-.parashat-shavoua {
-  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    50px 50px 50px 50px rgba(0, 0, 0, 0);
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    50px 50px 50px 50px rgba(0, 0, 0, 0);
 
-  font-family: "Horev";
-  background-color: #e9dfcf;
-  border-radius: 10%;
-  text-align: center;
-  margin: 10px;
-  padding: 10px;
-  font-weight: bold;
-  font-size: xx-large;
-}
 .parashat-img {
   height: 250px;
   width: 150px;
@@ -190,6 +219,10 @@ section {
   font-size: 22px;
   font-weight: bold;
 }
+.shiueri-Tora__text{
+  margin: 20px auto ;
+}
+
 .shiueri-Tora__img {
   max-width: 300px;
   height: 300px;
@@ -281,6 +314,7 @@ section {
 .popup__text {
   font-family: "Horev";
   font-size: xx-large;
+  margin: 30px auto;
 }
 
 .header__img-popup {
@@ -304,7 +338,13 @@ section {
   visibility: hidden;
   display: flex;
   position: fixed;
+ 
 }
+.popup-smallNav{
+  justify-content:flex-start;
+}
+
+
 
 .content__section-title {
   display: flex;
@@ -322,6 +362,13 @@ section {
   position: relative;
   margin: auto;
   background-color: white;
+}
+
+
+.popup-container-_small{
+  margin: 0;
+  background-color: white;
+
 }
 
 .popup-open {
@@ -390,10 +437,11 @@ section {
 .scroll {
   font-family: "Noto Serif Hebrew";
   letter-spacing: 1px;
-  font-size: 22px;
+  font-size: 18px;
   direction: rtl;
   padding: 70px 30px;
   height: 260px;
+  max-width: 360px;
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
@@ -414,12 +462,22 @@ section {
 .footer-info {
   display: flex;
   justify-content:space-around;
+  flex-wrap: wrap;
   padding: 30px 0;
+  gap: 10px;
 }
 
 .footer-map {
-  width: 400px;
+  box-sizing: border-box;
+  padding: 15px;
+  max-width: 400px;
   height: 200px;
+
+}
+.footer-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 @keyframes fade {
@@ -440,19 +498,19 @@ section {
   src: url(../public/fonts/Horev\ CLM\ Heavy.ttf);
 }
 
+
 @media screen and (max-width: 430px) {
   .header__img {
     width: 280px;
     height: 280px;
   }
-}
-@media screen and (max-width: 430px) {
+  .popup-form {
+    padding: 30px;
+  }
   .header__navbar {
     width: 280px;
     padding: 0;
   }
-}
-@media screen and (max-width: 430px) {
   .header__navbar_item {
     margin: 0;
     padding: 2px;
@@ -460,44 +518,34 @@ section {
     font-size: large;
     text-align: center;
   }
-}
-@media screen and (max-width: 430px) {
   .shiurei-tora {
     flex-direction: column;
     margin: 10px auto 10px;
     flex-direction: column-reverse;
   }
-}
-@media screen and (max-width: 430px) {
   .shiueri-Tora__img {
     margin: 10px auto 10px;
   }
-}
-@media screen and (max-width: 430px) {
-  .header__title {
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 430px) {
   .section-title {
     width: fit-content;
     font-size: 46px;
     margin: 0 auto 20px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.218);
   }
-}
-@media screen and (max-width: 430px) {
   .content__section-title {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-}
-@media screen and (max-width: 430px) {
+  .header__title {
+    font-size: 26px;
+  }
   .popup-close {
     right: 0;
   }
 }
+
+
 @media screen and (max-width: 575px) {
   .adsBored {
     grid-template-areas:
@@ -506,5 +554,22 @@ section {
       "siurchol siurchol siurchol siurchol siurchol siurchol"
       "  chol chol chol  chol chol chol ";
     gap: 8px;
+
   }
+.header__navbar {
+display: none;
+
+}.menu-btn{
+  display: block;
+
+}
+.header__small-navbar{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+flex-direction: column-reverse;
+
+}
+
+
 }

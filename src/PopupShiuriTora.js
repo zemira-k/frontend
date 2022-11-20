@@ -5,7 +5,7 @@ import { Slides } from "./Slides";
 
 export const PopupShiuriTora = (props) => {
   return (
-    <Popup openPopup={props.openPopup}>
+    <Popup closePopup={props.closePopup} openPopup={props.openPopup}>
       <div className="popup__content">
       <FaWindowClose className="popup-close" onClick={props.closePopupfunc} />
       <h2 className="popup-title">משעורי השבוע</h2>

@@ -4,7 +4,7 @@ import { Popup } from "./Popup";
 export const PopupEdit = (props) => {
   
   return (
-    <Popup openPopup={props.openPopup}>
+    <Popup closePopup={props.closePopup}  openPopup={props.openPopup}>
 
         <form className="popup-form">
         <FaWindowClose className="popup-close"  onClick={props.closePopupfunc}/>
