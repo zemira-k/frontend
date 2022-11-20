@@ -4,34 +4,40 @@ export const Slides =(props)=>{
     const slides = [
         {
           id: 1,
-          numbertext: "1 / 4",
+          numbertext: "1 / 5",
           src: require("./images/1.jpg"),
           text: "Caption Text",
         },
         {
           id: 2,
-          numbertext: "2 / 4",
+          numbertext: "2 / 5",
           src: require("./images/2.jpg"),
           text: "Caption Text",
         },
         {
           id: 3,
-          numbertext: "3 / 4",
+          numbertext: "3 / 5",
           src: require("./images/3.jpg"),
           text: "Caption Text",
         },
         {
           id: 4,
-          numbertext: "4 / 4",
+          numbertext: "4 / 5",
           src: require("./images/4.jpg"),
           text: "Caption Text",
+        },
+        {
+          id: 5,
+          numbertext: "5 / 5",
+          src: require("./images/gopo.png"),
+          text: "",
         },
       ];
 
 
       const dots = [];
 
-      dots.fill("4", 0, 4);
+      dots.fill("5", 0, 6);
     
       function handleRightClick() {
         if (count < slides.length) setCount(count + 1);
@@ -99,6 +105,11 @@ return( <div className="slideshow-bin" >
   <span
     className={count === 4 ? "dot active" : "dot"}
     id="4"
+    onClick={handleDotClick}
+  ></span>
+  <span
+    className={count === 5 ? "dot active" : "dot"}
+    id="5"
     onClick={handleDotClick}
   ></span>
 </div></div>)

@@ -3,13 +3,18 @@ import "./App.css";
 import { PopupEdit } from "./PopupEdit.js";
 import { PopupShiuriTora } from "./PopupShiuriTora.js";
 import { FaEdit } from "react-icons/fa";
+import { TiThMenu } from "react-icons/ti";
+
 import { Slides } from "./Slides";
+import { Navbar } from "./Navbar";
+import { Popup } from "./Popup";
 function App() {
   const [data, setData] = React.useState();
   const [shabatTime, setShabatTime] = React.useState("");
   const [dayTime, setDayTime] = React.useState("");
   const [popupEdit, setPopupEdit] = React.useState(false);
   const [popupShiuriTora, setPopupShiuriTora] = React.useState(false);
+  const [isVisible, setIsVisible] = React.useState(false)
 
   const shiureiToraData = [
     {
@@ -50,7 +55,12 @@ function App() {
   const closePopup = () => {
     setPopupEdit(false);
     setPopupShiuriTora(false);
+    setIsVisible(false)
   };
+
+const openMenu=()=>{
+  setIsVisible(true)
+}
 
   React.useEffect(() => {
     fetch("https://www.hebcal.com/zmanim?cfg=json&geonameid=293397")
@@ -98,44 +108,18 @@ function App() {
 
   return (
     <div className="App">
-      <PopupEdit openPopup={popupEdit} closePopupfunc={closePopup} />
+      <PopupEdit closePopup={closePopup} openPopup={popupEdit} closePopupfunc={closePopup} />
       <PopupShiuriTora
+      closePopup={closePopup}
         openPopup={popupShiuriTora}
         closePopupfunc={closePopup}
-      />
+      /> 
       <header id="header-menu">
-        <nav>
-          <ul className="header__navbar">
-            <li className="header__navbar_item">
-              {" "}
-              <a className="header__navbar_link" href="#contact">
-                צור קשר
-              </a>
-            </li>
-            <li className="header__navbar_item">
-              {" "}
-              <a className="header__navbar_link" href="#donation">
-                תרומה
-              </a>
-            </li>
-            <li className="header__navbar_item">
-              <a className="header__navbar_link" href="#shiurei-Tora">
-                שיעורי תורה
-              </a>
-            </li>
-            <li className="header__navbar_item">
-              <a className="header__navbar_link" href="#zmani-tefila">
-                זמני תפילה
-              </a>
-            </li>
-            <li className="header__navbar_item">
-              {" "}
-              <a className="header__navbar_link" href="#header-menu">
-                ראשי
-              </a>
-            </li>
-          </ul>
-        </nav>
+        {isVisible?<Popup smallNav={true} closePopup={closePopup} openPopup={true}><Navbar isVisible={isVisible}></Navbar></Popup> : <Navbar isVisible={isVisible}></Navbar> 
+        }
+        <button className="menu-btn"  onClick={openMenu} ><TiThMenu/></button>
+     
+  
         <div className="header__title">בית כנסת בית אל הרצל יהוד</div>
         <Slides />
       </header>
@@ -277,24 +261,6 @@ function App() {
       </main>
       <footer>
         <div className="footer-info">
-          <div>
-            כל הזכויות שמורות ל
-            <a
-              href="https://github.com/aviran6709"
-              target="_blank"
-              rel="noreferrer"
-            >
-              אבירן
-            </a>{" "}
-            <a
-              href="https://github.com/zemira-k"
-              target="_blank"
-              rel="noreferrer"
-            >
-              וזמירה
-            </a>{" "}
-            &copy;
-          </div>
           <div className="footer-map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6050.379242029409!2d34.88673683292689!3d32.0336743648821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d350b5c5190f1%3A0xccc78efbdd33a832!2z15HXmdeqINeb16DXodeqINeR15nXqiDXkNec!5e0!3m2!1siw!2sil!4v1668678849196!5m2!1siw!2sil"
@@ -305,6 +271,30 @@ function App() {
               width="100%"
               height="100%"
             ></iframe>
+          </div>
+          <div className="footer-content">
+            <div>
+              <h4>גבאי בית הכנסת : עמוס נימני</h4>
+              <h4>כתובת: הרצל  21 יהוד</h4>
+            </div>
+            <div>
+              כל הזכויות שמורות ל
+              <a
+                href="https://github.com/aviran6709"
+                target="_blank"
+                rel="noreferrer"
+              >
+                אבירן
+              </a>{" "}
+              <a
+                href="https://github.com/zemira-k"
+                target="_blank"
+                rel="noreferrer"
+              >
+                וזמירה
+              </a>{" "}
+              &copy;
+            </div>
           </div>
         </div>
       </footer>
